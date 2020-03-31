@@ -1,9 +1,12 @@
 const path = require("path");
 const HTMLplugin = require("html-webpack-plugin");
 
+const BUILD_DIR = path.resolve(__dirname, "build/");
+const SOURCE_DIR = path.resolve(__dirname, "src/");
+
 const rules = [
   {
-    test: /\.js$/,
+    test: /\.(js|jsx)$/,
     exclude: /node_modules/,
     use: {
       loader: "babel-loader"
@@ -21,15 +24,18 @@ const rules = [
 ];
 
 module.exports = {
-  entry: path.join(__dirname, "src", "index.js"),
+  entry: SOURCE_DIR + "/index.jsx",
   output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "./build")
+    path: BUILD_DIR,
+    filename: "bundle.js"
+  },
+  resolve: {
+    extensions: [".js", ".jsx"]
   },
   module: { rules },
   devServer: {
     host: "0.0.0.0",
-    port: 80,
+    port: 5000,
     disableHostCheck: true
   },
   plugins: [

@@ -8,7 +8,8 @@
     > echo node_modules\\n.DS_Store\\nbuild > .gitignore
     > yarn init -y && git init
     > mkdir public src src/components
-    > touch public/index.html src/index.js
+    > touch public/index.html src/index.js src/components/App.jsx
+    ! see content of those files
     > yarn add react react-dom
     > yarn add --dev webpack webpack-cli webpack-dev-server html-webpack-plugin html-loader
     > yarn add --dev @babel/core @babel/preset-react @babel/preset-env babel-loader style-loader css-loader
@@ -20,7 +21,7 @@
 ### !!! Git
 
     > git remote add origin https://github.com/mvcorrea/react_boilerplate.git
-    ! I git pull origin master to merge the previously created README.md
+    ! git pull origin master to merge the previously created README.md
     > git pull origin master --allow-unrelated-histories
     > git add –-all
     > git commit -m "first commit"
@@ -48,4 +49,12 @@
     > docker run -d -p 5000:5000 --name react_app_sample react_app_sample
     ! get into the container
     > docker exec -it react_app_sample /bin/sh
+    !! using docker-compose.yml
+    > touch docker-compose.yml
+    ! see content in docker-compose.yml
+    ! run container thru compose (on dir)
+    > docker-compose up -d --build
+    > docker-compose stop
+    > docker-compose ps
+
 

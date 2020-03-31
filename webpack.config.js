@@ -27,6 +27,11 @@ module.exports = {
     path: path.resolve(__dirname, "./build")
   },
   module: { rules },
+  devServer: {
+    host: "0.0.0.0",
+    port: 80,
+    disableHostCheck: true
+  },
   plugins: [
     new HTMLplugin({
       template: "./public/index.html"
